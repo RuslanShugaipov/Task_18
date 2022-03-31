@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_controller"
+    app:startDestination="@id/msgListFragment">
+
+    <fragment
+        android:id="@+id/msgListFragment"
+        android:name="com.example.task18.MsgListFragment"
+        android:label="MsgList"
+        tools:layout="@layout/fragment_msg_list" >
+        <action
+            android:id="@+id/navigateToMsgEditFragment"
+            app:destination="@id/msgEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/msgEditFragment"
+        android:name="com.example.task18.MsgEditFragment"
+        android:label="MsgEdit"
+        tools:layout="@layout/fragment_msg_edit" >
+        <action
+            android:id="@+id/navigateToMsgListFragment"
+            app:destination="@id/msgListFragment" />
+        <argument
+            android:name="msg"
+            app:argType="com.example.task18.MsgItem"/>
+    </fragment>
+</navigation>
